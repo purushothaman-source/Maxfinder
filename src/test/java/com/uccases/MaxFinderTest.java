@@ -15,7 +15,7 @@ public class MaxFinderTest {
     @Test
     public void givenThreeFloatValue_ShouldReturnMaxvalue() {
         MaxFinder maxFinder= new MaxFinder();
-        Float max = maxFinder.findFloatMax(-150.0f, 300.00f, 400.00f);
+        Float max = maxFinder.findFloatMax(-150.0f, 300.0f, 400.00f);
         Assert.assertEquals(400.0,max,0);
     }
 }

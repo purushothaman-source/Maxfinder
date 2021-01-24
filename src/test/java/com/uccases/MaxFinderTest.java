@@ -8,7 +8,7 @@ public class MaxFinderTest {
     @Test
     public void givenThreeInteger_ShouldReturnMaxvalue() {
         MaxFinder maxFinder= new MaxFinder();
-        int max = maxFinder.findMax(300, 400, -150);
+        int max = maxFinder.findMax(300, -150, 400);
         Assert.assertEquals(400,max);
     }
 }

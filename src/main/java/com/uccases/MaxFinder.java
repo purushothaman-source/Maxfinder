@@ -1,29 +1,13 @@
 package com.uccases;
 
 public class MaxFinder {
-    public int findMax(Integer a, Integer b, Integer c) {
-        int max = a;
-        if (b.compareTo(max) > 0 && b.compareTo(c) > 0 )
+
+    public <E extends Comparable> E findMaxValue(E a, E b, E c) {
+        E max = a;
+        if (b.compareTo(max) > 0 && b.compareTo(c) > 0)
             max = b;
         else if (c.compareTo(max) > 0)
             max = c;
         return max;
     }
-
-    public float findFloatMax(Float a, Float b, Float c) {
-        Float max = a;
-        if (b.compareTo(max) > 0 && b.compareTo(c) > 0 )
-            max = b;
-        else if (c.compareTo(max) > 0)
-            max = c;
-        return max;
-    }
-
-    public String findStringMax(String a, String b, String c) {
-        String max = a;
-        if (b.compareTo(max) > 0 && b.compareTo(c) > 0 )
-            max = b;
-        else if (c.compareTo(max) > 0)
-            max = c;
-        return max;}
 }

@@ -18,4 +18,11 @@ public class MaxFinderTest {
         Float max = maxFinder.findFloatMax(-150.0f, 300.0f, 400.00f);
         Assert.assertEquals(400.0,max,0);
     }
+
+    @Test
+    public void givenThreeStringValue_ShouldReturnMaxvalue() {
+        MaxFinder maxFinder= new MaxFinder();
+        String max = maxFinder.findStringMax("Peach","Apple", "Banana");
+        Assert.assertEquals("Peach",max);
+    }
 }

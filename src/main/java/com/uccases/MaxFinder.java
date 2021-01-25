@@ -21,15 +21,22 @@ public class MaxFinder<E extends  Comparable<E>> {
             max = b;
         else if (c.compareTo(max) > 0)
             max = c;
+        MaxFinder.printmax(max);
         return max;
     }
 
-    public E max(E ... args){
+    public static<E extends Comparable> E max(E ... args){
         E max = args[0];
         for (E maxFinder:args) {
             if(maxFinder.compareTo(max) > 0)
                 max=maxFinder;
         }
+        MaxFinder.printmax(max);
         return max;
     }
+
+    private static <E > void printmax(E max) {
+        System.out.println(max+" is maximum");
+    }
+
 }

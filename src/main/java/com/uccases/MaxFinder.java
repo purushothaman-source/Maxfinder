@@ -1,7 +1,11 @@
 package com.uccases;
 
-public class MaxFinder<E extends  Comparable<E>> {
-          private E a,b,c;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class MaxFinder<E extends Comparable<E>> {
+    private E a, b, c;
 
     public MaxFinder() {
     }
@@ -11,12 +15,13 @@ public class MaxFinder<E extends  Comparable<E>> {
         this.b = b;
         this.c = c;
     }
-    public E maximum(){
-        return findMaxValue(a,b,c);
+
+    public E maximum() {
+        return findMaxValue(a, b, c);
     }
 
-    public static <E extends Comparable> E findMaxValue(E a,E b,E c) {
-        E max =  a;
+    public static <E extends Comparable> E findMaxValue(E a, E b, E c) {
+        E max = a;
         if (b.compareTo(max) > 0 && b.compareTo(c) > 0)
             max = b;
         else if (c.compareTo(max) > 0)
@@ -25,18 +30,14 @@ public class MaxFinder<E extends  Comparable<E>> {
         return max;
     }
 
-    public static<E extends Comparable> E max(E ... args){
-        E max = args[0];
-        for (E maxFinder:args) {
-            if(maxFinder.compareTo(max) > 0)
-                max=maxFinder;
-        }
-        MaxFinder.printmax(max);
-        return max;
+    public static <E> E max(E... args) {
+        List<E> collect = Arrays.stream(args).sorted().collect(Collectors.toList());
+        return collect.get(collect.size()-1);
+
     }
 
-    private static <E > void printmax(E max) {
-        System.out.println(max+" is maximum");
+    private static <E> void printmax(E max) {
+        System.out.println(max + " is maximum");
     }
 
 }
